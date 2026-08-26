@@ -1,6 +1,6 @@
-# TrendSeekr\
+# TrendSeekr
 
-## NOTE: This is a dev build that will only work locally.\
+## NOTE: This is a dev build that will only work locally.
 
 TrendSeekr is a python project that aggregates headlines from RSS feeds of different major North American news outlets.
 
