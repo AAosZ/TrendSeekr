@@ -1,0 +1,37 @@
+services:
+  postgres-test:
+    image: pgvector/pgvector:0.8.6-pg18-trixie
+
+    container_name: postgres-codetest-db
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: testpassword
+      POSTGRES_DB: testdb
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - 5050:80
+
+# DOCKER COMMANDS:
+#
+# docker compose up -d
+# docker compose down -v
+# docker compose up --build
+# docker exec -it postgres-codetest-db psql -U postgres -d testdb
+# \dt
+# cd Documents\Portfolio\Coding\'.\News Scraper\'\Test
+# DATABASE_URL = "postgresql://postgres:testpassword@localhost:5432/testdb"
+# host.docker.internal
