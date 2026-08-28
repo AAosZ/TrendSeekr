@@ -42,7 +42,7 @@ class Queries:
             entity_id SERIAL PRIMARY KEY,
             entity_name TEXT NOT NULL,
             entity_type TEXT NOT NULL DEFAULT 'concept',
-            embedding VECTOR(2000) NOT NULL,
+            embedding VECTOR(1024) NOT NULL,
             created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
         );
     """

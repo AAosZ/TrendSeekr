@@ -58,6 +58,7 @@ class EmbeddingClient:
         embedding = response["data"][0]["embedding"]
 
         if len(embedding) != self.config.EMBEDDING_DIMENSION:
+
             raise ValueError(
                 "Embedding dimension mismatch. "
                 f"Expected {self.config.EMBEDDING_DIMENSION}, got {len(embedding)}."
@@ -326,6 +327,7 @@ class AnalyticsEngine:
         with connection.cursor() as cursor:
             cursor.execute(self.queries.MARK_ANALYSIS_ANALYZED_SQL, (article_id,))
 
+
     def process_article(self, connection, article: dict[str, Any]) -> int:
         candidates = self.extract_candidates(article)
         tagged_entities = 0
@@ -337,6 +339,7 @@ class AnalyticsEngine:
 
         self.mark_article_analyzed(connection, article["article_id"])
         return tagged_entities
+
 
     def process_pending_articles(self, connection) -> None:
         self.ensure_schema(connection)

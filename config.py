@@ -16,7 +16,7 @@ class Config:
     MODEL_NAME = os.getenv("NEWS_LLM_MODEL_NAME", os.path.basename(MODEL_PATH))
 
     # Local embedding model used by the analytics entity pipeline.
-    DEFAULT_EMBEDDING_MODEL_PATH = "C:/Users/shawn/Documents/Portfolio/Coding/News Scraper/Qwen3-Embedding-8B-Q8_0.gguf"
+    DEFAULT_EMBEDDING_MODEL_PATH = "C:/Users/shawn/Documents/Portfolio/Coding/News Scraper/Qwen3-Embedding-0.6B-Q8_0.gguf"
     EMBEDDING_MODEL_PATH = os.getenv("NEWS_EMBEDDING_MODEL_PATH", DEFAULT_EMBEDDING_MODEL_PATH)
     EMBEDDING_MODEL_NAME = os.getenv(
         "NEWS_EMBEDDING_MODEL_NAME",
